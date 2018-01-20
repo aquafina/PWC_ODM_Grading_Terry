@@ -1,0 +1,23 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="model.GradingTerry.AM.PwcOdmGradingAM">
+      <AppModuleConfig name="PwcOdmGradingAMLocal" ApplicationName="model.GradingTerry.AM.PwcOdmGradingAM" DeployPlatform="LOCAL" JDBCName="Con1" jbo.project="model.Model">
+         <Security AppModuleJndiName="model.GradingTerry.AM.PwcOdmGradingAM"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="PwcOdmGradingAMShared" ApplicationName="model.GradingTerry.AM.PwcOdmGradingAM" DeployPlatform="LOCAL" JDBCName="Con1" jbo.project="model.Model">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="model.GradingTerry.AM.PwcOdmGradingAM"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+   <AppModuleConfigBag ApplicationName="model.GradingTerry.AM.PwcOdmGradingTerry_AM">
+      <AppModuleConfig DeployPlatform="LOCAL" jbo.project="model.Model" name="PwcOdmGradingTerry_AMLocal" ApplicationName="model.GradingTerry.AM.PwcOdmGradingTerry_AM">
+         <Database jbo.locking.mode="optimistic"/>
+         <Security AppModuleJndiName="model.GradingTerry.AM.PwcOdmGradingTerry_AM"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/Con1DS"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="PwcOdmGradingTerry_AMShared" ApplicationName="model.GradingTerry.AM.PwcOdmGradingTerry_AM" DeployPlatform="LOCAL" JDBCName="Con1" jbo.project="model.Model">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="model.GradingTerry.AM.PwcOdmGradingTerry_AM"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

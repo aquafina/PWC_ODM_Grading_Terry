@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.62.29" id="Grading_Terry_Search_PGPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PwcOdmNGGradingHeaderVO1" RangeSize="25"
+              DataControl="PwcOdmGradingAMDataControl1"
+              id="PwcOdmNGGradingHeaderVO1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="PwcOdmNGGradingHeaderVO1Iterator"
+                  id="ImplicitViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="PwcOdmNGGradingHeaderVO1Iterator"
+          id="PwcOdmNGGradingHeaderVO1">
+      <nodeDefinition DefName="model.GradingTerry.VO.PwcOdmNGGradingHeaderVO"
+                      Name="PwcOdmNGGradingHeaderVO10">
+        <AttrNames>
+          <Item Value="GdId"/>
+          <Item Value="GdNo"/>
+          <Item Value="GdDate"/>
+          <Item Value="SalesOrderNumber"/>
+          <Item Value="ItemCode"/>
+          <Item Value="Job"/>
+          <Item Value="JobQuantity"/>
+          <Item Value="StitchQuantity"/>
+          <Item Value="ItemDescription"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.62.29" id="DataBindings" SeparateXMLFiles="false"
+             Package="view" ClientType="Generic">
+  <pageMap>
+    <page path="/GradingTerry_Create_PG.jspx"
+          usageId="view_GradingTerry_Create_PGPageDef"/>
+    <page path="/GradingTerry_Search_PG.jspx"
+          usageId="view_GradingTerry_Search_PGPageDef"/>
+    <page path="/Grading_Terry_Search_PG.jspx"
+          usageId="view_Grading_Terry_Search_PGPageDef"/>
+    <page path="/Geading_Terry_Search_PG.jspx"
+          usageId="view_Geading_Terry_Search_PGPageDef"/>
+    <page path="/GradingTerry_SearchPG.jspx"
+          usageId="view_GradingTerry_SearchPGPageDef"/>
+    <page path="/GradingTerry_CreatePG.jspx"
+          usageId="view_GradingTerry_CreatePGPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_GradingTerry_Create_PGPageDef"
+          path="view.pageDefs.GradingTerry_Create_PGPageDef"/>
+    <page id="view_GradingTerry_Search_PGPageDef"
+          path="view.pageDefs.GradingTerry_Search_PGPageDef"/>
+    <page id="view_Grading_Terry_Search_PGPageDef"
+          path="view.pageDefs.Grading_Terry_Search_PGPageDef"/>
+    <page id="view_Geading_Terry_Search_PGPageDef"
+          path="view.pageDefs.Geading_Terry_Search_PGPageDef"/>
+    <page id="view_GradingTerry_SearchPGPageDef"
+          path="view.pageDefs.GradingTerry_SearchPGPageDef"/>
+    <page id="view_GradingTerry_CreatePGPageDef"
+          path="view.pageDefs.GradingTerry_CreatePGPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="PwcOdmGradingAMDataControl" Package="model.AM"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="PwcOdmGradingAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="PwcOdmGradingAMDataControl1"
+                     Package="model.GradingTerry.AM"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="PwcOdmGradingAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="PwcOdmGradingTerry_AMDataControl"
+                     Package="model.GradingTerry.AM"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="PwcOdmGradingTerry_AMLocal"
+                     syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

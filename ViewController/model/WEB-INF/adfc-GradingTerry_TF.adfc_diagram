@@ -1,0 +1,55 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View9">
+      <property
+         name="activityId">GradingTerry_SearchPG</property>
+      <property
+         name="page">/GradingTerry_SearchPG.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>GradingTerry_SearchPG&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">155.28711</property>
+      <property
+         name="x">163.0</property>
+   </View>
+   <View
+      id="View10">
+      <property
+         name="activityId">GradingTerry_CreatePG</property>
+      <property
+         name="page">/GradingTerry_CreatePG.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>GradingTerry_CreatePG&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">256.59766</property>
+      <property
+         name="x">467.0</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase11"
+      from="View9"
+      to="View10">
+      <property
+         name="fromOutcome">To Create</property>
+      <property
+         name="sdm:polyPoints">R46,205.52176,151.43652,426.0,252.74707,L46</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase13"
+      from="View10"
+      to="View9">
+      <property
+         name="fromOutcome">To Search</property>
+      <property
+         name="sdm:polyPoints">L54,424.47348,259.74707,204.0,158.43652,R54</property>
+   </ControlFlowCase>
+</SDM>

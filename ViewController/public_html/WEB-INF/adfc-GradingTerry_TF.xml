@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="GradingTerry_SearchPG">
+    <page>/GradingTerry_SearchPG.jspx</page>
+  </view>
+  <view id="GradingTerry_CreatePG">
+    <page>/GradingTerry_CreatePG.jspx</page>
+  </view>
+  <control-flow-rule id="__11">
+    <from-activity-id id="__12">GradingTerry_SearchPG</from-activity-id>
+    <control-flow-case id="__14">
+      <from-outcome id="__15">To Create</from-outcome>
+      <to-activity-id id="__13">GradingTerry_CreatePG</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__20">
+    <from-activity-id id="__21">GradingTerry_CreatePG</from-activity-id>
+    <control-flow-case id="__22">
+      <from-outcome id="__24">To Search</from-outcome>
+      <to-activity-id id="__23">GradingTerry_SearchPG</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__4">
+    <managed-bean-name id="__2">ManagedBean</managed-bean-name>
+    <managed-bean-class id="__1">model.GradingTerry.BEAN.ManagedBean</managed-bean-class>
+    <managed-bean-scope id="__3">request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

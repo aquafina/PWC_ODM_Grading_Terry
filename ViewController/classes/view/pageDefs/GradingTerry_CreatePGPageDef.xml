@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.62.29" id="GradingTerry_CreatePGPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PwcOdmNGGradingHeadersVO1" RangeSize="25"
+              DataControl="PwcOdmGradingTerry_AMDataControl"
+              id="PwcOdmNGGradingHeadersVO1Iterator"/>
+    <iterator Binds="PwcOdmNgGradingLinesVO1" RangeSize="25"
+              DataControl="PwcOdmGradingTerry_AMDataControl"
+              id="PwcOdmNgGradingLinesVO1Iterator"/>
+    <searchRegion Binds="PwcOdmNgGradingLinesVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="PwcOdmNgGradingLinesVO1Query"/>
+  </executables>
+  <bindings>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="PwcOdmGradingTerry_AMDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false"
+            Action="rollbackTransaction"
+            DataControl="PwcOdmGradingTerry_AMDataControl"/>
+    <attributeValues IterBinding="PwcOdmNGGradingHeadersVO1Iterator"
+                     id="GdDate">
+      <AttrNames>
+        <Item Value="GdDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmNGGradingHeadersVO1Iterator"
+                     id="JobQuantity">
+      <AttrNames>
+        <Item Value="JobQuantity"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmNGGradingHeadersVO1Iterator"
+                     id="StitchQuantity">
+      <AttrNames>
+        <Item Value="StitchQuantity"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmNGGradingHeadersVO1Iterator"
+                     id="ItemDescription">
+      <AttrNames>
+        <Item Value="ItemDescription"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="PwcOdmNgGradingLinesVO1Iterator"
+          id="PwcOdmNgGradingLinesVO1">
+      <nodeDefinition DefName="model.GradingTerry.VO.PwcOdmNgGradingLinesVO"
+                      Name="PwcOdmNgGradingLinesVO10">
+        <AttrNames>
+          <Item Value="StitchingLineNo"/>
+          <Item Value="TotalQuantity"/>
+          <Item Value="Gradea"/>
+          <Item Value="Gradeb"/>
+          <Item Value="Gradec"/>
+          <Item Value="Remarks"/>
+          <Item Value="StitchingLineNumber"/>
+          <Item Value="RetrunFlag" Binds="RetrunFlag"/>
+          <Item Value="Rewash"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="Exceed_TOTALQTY"
+                  InstanceName="PwcOdmGradingTerry_AMDataControl.dataProvider"
+                  DataControl="PwcOdmGradingTerry_AMDataControl"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="Exceed_TOTALQTY" IsViewObjectMethod="false"/>
+    <action IterBinding="PwcOdmNgGradingLinesVO1Iterator" id="CreateInsert"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="PwcOdmNgGradingLinesVO1Iterator" id="Delete"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <listOfValues StaticList="false"
+                  IterBinding="PwcOdmNGGradingHeadersVO1Iterator"
+                  Uses="LOV_SalesOrderNumber" id="SalesOrderNumber"/>
+    <listOfValues StaticList="false"
+                  IterBinding="PwcOdmNGGradingHeadersVO1Iterator"
+                  Uses="NG_ODM_REP_GDNO" id="GdNo"/>
+    <listOfValues StaticList="false"
+                  IterBinding="PwcOdmNGGradingHeadersVO1Iterator"
+                  Uses="NG_ODM_REP_ITEM_CODE" id="ItemCode"/>
+    <listOfValues StaticList="false"
+                  IterBinding="PwcOdmNGGradingHeadersVO1Iterator"
+                  Uses="NG_ODM_REP_JOB" id="Job"/>
+    <attributeValues IterBinding="PwcOdmNGGradingHeadersVO1Iterator"
+                     id="TranTotalQty">
+      <AttrNames>
+        <Item Value="TranTotalQty"/>
+      </AttrNames>
+    </attributeValues>
+    <button IterBinding="PwcOdmNgGradingLinesVO1Iterator" id="RetrunFlag"
+            DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="RetrunFlag"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="Y"/>
+        <Item Value="N"/>
+      </ValueList>
+    </button>
+  </bindings>
+</pageDefinition>
